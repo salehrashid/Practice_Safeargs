@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/oneFragment">
+
+    <fragment
+        android:id="@+id/oneFragment"
+        android:name="com.app.safeargs.OneFragment"
+        android:label="fragment_one"
+        tools:layout="@layout/fragment_one" >
+        <argument
+            android:name="flowStepFragment"
+            app:argType="integer"
+            android:defaultValue="1"/>
+
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/twoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/twoFragment"
+        android:name="com.app.safeargs.OneFragment"
+        android:label="fragment_two"
+        tools:layout="@layout/fragment_two" >
+        <argument
+            android:name="flowStepFragment"
+            app:argType="integer"
+            android:defaultValue="2"/>
+
+        <action
+            android:id="@+id/next_action"
+            app:destination="@id/oneFragment" />
+    </fragment>
+</navigation>
